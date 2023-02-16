@@ -12,3 +12,7 @@ func TestTwoSum(t *testing.T) {
 func Test_lengthOfLongestSubstring(t *testing.T) {
 	lengthOfLongestSubstring("abcdefasdffsdddsddd")
 }
+
+func Test_myPow(t *testing.T) {
+	fmt.Println(myPow(9, 99))
+}

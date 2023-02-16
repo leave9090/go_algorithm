@@ -26,3 +26,29 @@ func maxNum(num1, num2 int) int {
 		return num2
 	}
 }
+
+/*
+ 2  2
+2*2
+2 3
+2*2*2
+*/
+func myPow(x float64, n int) float64 {
+	if n == 0 {
+		return 1
+	}
+	if n == 1 || x == 1.0 {
+		return x
+	}
+
+	if n < 0 {
+		n *= -1
+		x = 1.0 / x
+	}
+
+	if n%2 == 0 {
+		return myPow(x*x, n/2)
+	}
+	return x * myPow(x*x, n/2)
+
+}
