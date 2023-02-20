@@ -9,21 +9,21 @@ type (
 	}
 )
 
-func (n *ListNode) GetNodeValue() int {
-	return n.value
+func (head *ListNode) GetNodeValue() int {
+	return head.value
 }
 
-func (n *ListNode) GetNodeNext() *ListNode {
-	return n.next
+func (head *ListNode) GetNodeNext() *ListNode {
+	return head.next
 }
 
-func (n *ListNode) InsertNode(value int) {
-	n.value = value
+func (head *ListNode) InsertNode(value int) {
+	head.value = value
 }
-func (n *ListNode) PrintNode() {
-	for n != nil {
-		fmt.Println(n.value)
-		n = n.next
+func (head *ListNode) PrintNode() {
+	for head != nil {
+		fmt.Println(head.value)
+		head = head.next
 	}
 }
 
@@ -49,13 +49,13 @@ func (head *ListNode) Insert(i int, e int) bool {
 	p.next = s
 	return true
 }
-func (n *ListNode) add(value int) {
-	n.value = value
-	n.next = nil
+func (head *ListNode) add(value int) {
+	head.value = value
+	head.next = nil
 }
 
-func (n *ListNode) rangeLink() {
-	point := n.next
+func (head *ListNode) rangeLink() {
+	point := head.next
 	for nil != point {
 		fmt.Println(point.value)
 		point = point.next

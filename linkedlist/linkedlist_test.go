@@ -13,5 +13,10 @@ func Test_ss(t *testing.T) {
 	list.Insert(1, 1)
 	list.Insert(1, 2)
 	list.Insert(1, 3)
-	list.rangeLink()
+	//list.rangeLink()
+	list.PrintNode()
+}
+
+func Test_ss1(t *testing.T) {
+	//ss()
 }
