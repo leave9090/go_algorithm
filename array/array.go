@@ -5,6 +5,20 @@ import (
 	"sort"
 )
 
+/*
+1. two num
+*/
+func twoNum(nums []int, num int) (int, int) {
+	numMap := make(map[int]int)
+	for i, v := range nums {
+		if j, ok := numMap[num-v]; ok {
+			return i, j
+		}
+		numMap[v] = i
+	}
+	return 0, 0
+}
+
 // 485. 最大连续 1 的个数
 func findMaxConsecutiveOnes(nums []int) int {
 	var numMax, numNow int

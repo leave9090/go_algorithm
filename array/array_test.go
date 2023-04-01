@@ -12,3 +12,7 @@ func Test_findMaxConsecutiveOnes(t *testing.T) {
 func Test_thirdMax2(t *testing.T) {
 	thirdMax2([]int{1, 2, 7, 2, 4, 9, 3, 4, 5})
 }
+
+func Test_twoNum(t *testing.T) {
+	fmt.Println(twoNum([]int{2, 4, 5, 7, 8}, 6))
+}
