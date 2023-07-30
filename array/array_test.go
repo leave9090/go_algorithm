@@ -16,3 +16,7 @@ func Test_thirdMax2(t *testing.T) {
 func Test_twoNum(t *testing.T) {
 	fmt.Println(twoNum([]int{2, 4, 5, 7, 8}, 6))
 }
+
+func Test_maxArea(t *testing.T) {
+	fmt.Println(maxArea([]int{1, 8, 6, 2, 5, 4, 8, 3, 7}))
+}

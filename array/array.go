@@ -19,6 +19,59 @@ func twoNum(nums []int, num int) (int, int) {
 	return 0, 0
 }
 
+/*
+11. 盛最多水的容器
+*/
+func maxArea(height []int) int {
+	var maxNums int
+	// 1
+	//for i := 0; i < len(height)-1; i++ {
+	//	for j := i + 1; j < len(height); j++ {
+	//		var now = minNum(height[i], height[j]) * (j - i)
+	//		if now > maxNum {
+	//			maxNum = now
+	//		}
+	//	}
+	//}
+
+	//2
+	//start, end := 0, len(height)-1
+	//for start < end {
+	//	now := (end - start) * minNum(height[start], height[end])
+	//	maxNums = maxNUm(maxNums, now)
+	//	end--
+	//	if end == start {
+	//		start++
+	//		end = len(height) - 1
+	//	}
+	//}
+
+	//3
+	star, end := 0, len(height)-1
+	for star < end {
+		var now int
+		if height[star] < height[end] {
+			now = (end - star) * height[star]
+			star++
+		} else {
+			now = (end - star) * height[end]
+			end--
+		}
+		if now > maxNums {
+			maxNums = now
+		}
+	}
+	return maxNums
+}
+
+func minNum(int1, int2 int) int {
+	if int2 > int1 {
+		return int1
+	} else {
+		return int2
+	}
+}
+
 // 485. 最大连续 1 的个数
 func findMaxConsecutiveOnes(nums []int) int {
 	var numMax, numNow int
