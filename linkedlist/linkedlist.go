@@ -43,3 +43,22 @@ func (l *LinkedList) Print() {
 		currentNode = currentNode.Next
 	}
 }
+
+/*
+leetcode 203
+*/
+func removeElements(head *ListNode, val int) *ListNode {
+	pseudoHead := &ListNode{}
+	pseudoHead.Next = head
+	prev, cur := pseudoHead, head
+
+	for cur != nil {
+		if cur.Value == val {
+			prev.Next = cur.Next
+		} else {
+			prev = cur
+		}
+		cur = cur.Next
+	}
+	return pseudoHead.Next
+}
