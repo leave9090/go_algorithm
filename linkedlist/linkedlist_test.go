@@ -2,9 +2,9 @@ package linkedlist
 
 import (
 	"fmt"
+	"reflect"
 	"testing"
 )
-
 
 func Test_Linked(t *testing.T) {
 	linkedList := &LinkedList{}
