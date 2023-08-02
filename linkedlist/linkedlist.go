@@ -43,3 +43,42 @@ func (l *LinkedList) Print() {
 		currentNode = currentNode.Next
 	}
 }
+
+func (l *LinkedList) Length() int {
+	var length int
+	currentNode := l.Head
+	for currentNode != nil {
+		length++
+		currentNode = currentNode.Next
+	}
+	return length
+}
+
+func (l *LinkedList) Del(value int) {
+	if l.Head == nil {
+		return
+	}
+
+	currentNode := l.Head
+	for currentNode.Next != nil {
+		if currentNode.Next.Value == value {
+			currentNode.Next = currentNode.Next.Next
+		} else {
+			currentNode = currentNode.Next
+
+		}
+	}
+}
+
+//func (l *LinkedList) DelLink(value int) *LinkedList {
+//	link := new(LinkedList)
+//	if l.Head == nil {
+//		return link
+//	}
+//	currentNode := l.Head
+//	for currentNode.Next != nil {
+//		if currentNode.Value == value {
+//
+//		}
+//	}
+//}
