@@ -73,31 +73,17 @@ func (l *LinkedList) Length() int {
 	return length
 }
 
-func (l *LinkedList) Del(value int) {
-	if l.Head == nil {
-		return
-	}
-
-	currentNode := l.Head
-	for currentNode.Next != nil {
-		if currentNode.Next.Value == value {
-			currentNode.Next = currentNode.Next.Next
+func (l *LinkedList) removeElements(val int) {
+	ll := &ListNode{}
+	ll.Next = l.Head
+	pre, cur := ll, l.Head
+	for cur != nil {
+		if cur.Value == val {
+			pre.Next = cur.Next
 		} else {
-			currentNode = currentNode.Next
-
+			pre = cur
 		}
+		cur = cur.Next
 	}
+	l.Head = ll.Next
 }
-
-//func (l *LinkedList) DelLink(value int) *LinkedList {
-//	link := new(LinkedList)
-//	if l.Head == nil {
-//		return link
-//	}
-//	currentNode := l.Head
-//	for currentNode.Next != nil {
-//		if currentNode.Value == value {
-//
-//		}
-//	}
-//}
