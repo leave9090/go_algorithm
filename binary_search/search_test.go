@@ -2,6 +2,7 @@ package binary_search
 
 import (
 	"fmt"
+	"sort"
 	"testing"
 )
 
@@ -26,4 +27,16 @@ func Test_searchRange2(t *testing.T) {
 	//fmt.Println(searchRange2([]int{1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 4, 5, 6, 7, 8, 9}, 3))
 	//fmt.Println(searchRange3([]int{2, 5}, 5))
 	fmt.Println(searchRange5([]int{1, 2, 2, 3, 3, 3, 4, 5, 6, 7, 8, 9}, 3))
+}
+
+func Test_Sort(t *testing.T) {
+	ss := []int{1, 4, 2, 7, 32, 5, 32, 3, 4, 23, 1}
+	sort.Ints(ss)
+	fmt.Println(ss)
+
+}
+
+func Test_mySqrt(t *testing.T) {
+
+	fmt.Println(mySqrt(2))
 }
