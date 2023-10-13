@@ -40,3 +40,22 @@ func Test_mySqrt(t *testing.T) {
 
 	fmt.Println(mySqrt(2))
 }
+
+func Test_searchBinary(t *testing.T) {
+	fmt.Println(searchBinary([]int{1, 2, 3, 3, 3, 5, 5, 5, 6}, 3))
+	fmt.Println(4 >> 2)
+}
+func searchBinary(nums []int, target int) int {
+	left, right := 0, len(nums)-1
+	for left <= right {
+		mid := left + (right-left)>>1
+		if nums[mid] > target {
+			right = mid - 1
+		} else if nums[mid] < target {
+			left = mid + 1
+		} else {
+			return mid
+		}
+	}
+	return -1
+}

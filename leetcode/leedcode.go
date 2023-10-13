@@ -120,3 +120,119 @@ func myPow(x float64, n int) float64 {
 	return x * myPow(x*x, n/2)
 
 }
+
+/*
+2848.与车相交的点
+*/
+func numberOfPoints(nums [][]int) int {
+	for _, i := range nums {
+		fmt.Println(i)
+	}
+	return 0
+}
+
+/*
+ */
+func removeElement(nums []int, val int) int {
+	var num int
+	for i := 0; i < len(nums); i++ {
+		if nums[i] != val {
+			nums[num] = nums[i]
+			num++
+		}
+	}
+	nums = nums[:num]
+	return num
+}
+
+/*
+双指针
+*/
+func removeElement2(nums []int, val int) int {
+
+	var left, right int
+	left, right = 0, len(nums)
+	for left < right {
+		if nums[left] == val {
+			nums[left] = nums[right-1]
+			right--
+		} else {
+			left++
+		}
+	}
+	nums = nums[:left]
+	return left
+
+}
+
+/*
+121  贪心算法
+*/
+func maxProfit(prices []int) int {
+	min := prices[0]
+	res := 0
+	for i := 1; i < len(prices); i++ {
+		if prices[i]-min > res {
+			res = prices[i] - min
+		}
+		if min > prices[i] {
+			min = prices[i]
+		}
+	}
+	return res
+}
+
+/*
+209.长度最小的子数组
+暴力
+*/
+func minSubArrayLen(target int, nums []int) int {
+	var length int
+	var result = math.MaxInt32
+	for i := 0; i < len(nums); i++ {
+		sum := 0
+		for j := i; j < len(nums); j++ {
+			sum += nums[j]
+			if sum >= target {
+				length = j - i + 1
+				if result > length {
+					result = length
+					break
+				}
+			}
+		}
+	}
+	if result == math.MaxInt32 {
+		result = 0
+	}
+	return result
+
+}
+
+/*
+209.长度最小的子数组
+滑动窗口
+*/
+func minSubArrayLen2(target int, nums []int) int {
+	i := 0 //起始位置
+	sum := 0
+	var result = math.MaxInt32
+	for j := 0; j < len(nums); j++ {
+		sum += nums[j]
+		for sum >= target {
+			lens := j - i + 1
+			if lens < result {
+				result = lens
+			}
+
+			sum -= nums[i]
+			i++
+		}
+
+	}
+	if result == math.MaxInt32 {
+		return 0
+	} else {
+		return result
+	}
+}
