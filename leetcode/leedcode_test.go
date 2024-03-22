@@ -98,3 +98,9 @@ func Test_maxProfit(t *testing.T) {
 func Test_minSubArrayLen(t *testing.T) {
 	fmt.Println(minSubArrayLen(7, []int{2, 3, 1, 2, 4, 3}))
 }
+
+func Test_reverseString2(t *testing.T) {
+	s := []byte{1, 2, 3, 5, 6}
+	reverseString2(s)
+	fmt.Println(s)
+}
