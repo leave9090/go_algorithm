@@ -246,3 +246,18 @@ func reverseString2(s []byte) {
 		j--
 	}
 }
+
+/*
+输入: nums = [0,1,0,3,12]
+输出: [1,3,12,0,0]
+*/
+func moveZeroes(nums []int) {
+	var left, right int
+	for right < len(nums) {
+		if nums[right] != 0 {
+			nums[left], nums[right] = nums[right], nums[left]
+			left++
+		}
+		right++
+	}
+}

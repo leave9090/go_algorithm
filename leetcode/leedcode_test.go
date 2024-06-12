@@ -104,3 +104,11 @@ func Test_reverseString2(t *testing.T) {
 	reverseString2(s)
 	fmt.Println(s)
 }
+
+func Test_moveZeroes(t *testing.T) {
+	nums := []int{1, 2, 0, 3, 2, 0, 1}
+	moveZeroes(nums)
+	fmt.Println(nums)
+	
+}
+
