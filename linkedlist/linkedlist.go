@@ -48,19 +48,32 @@ func (l *LinkedList) Print() {
 leetcode 203
 */
 func removeElements(head *ListNode, val int) *ListNode {
-	pseudoHead := &ListNode{}
-	pseudoHead.Next = head
-	prev, cur := pseudoHead, head
 
-	for cur != nil {
-		if cur.Value == val {
-			prev.Next = cur.Next
-		} else {
-			prev = cur
-		}
-		cur = cur.Next
+	return nil
+}
+
+/*
+leetcode 237
+*/
+
+/*
+leetcode 19
+*/
+func removeNthFromEnd(head *ListNode, n int) *ListNode {
+	dummy := &ListNode{
+		Next: head,
 	}
-	return pseudoHead.Next
+	first, second := dummy, dummy
+
+	for i := 0; i <= n; i++ {
+		first = first.Next
+	}
+	for first != nil {
+		second = second.Next
+		first = first.Next
+	}
+	second.Next = second.Next.Next
+	return dummy.Next
 }
 
 func (l *LinkedList) Length() int {
