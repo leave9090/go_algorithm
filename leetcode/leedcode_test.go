@@ -109,6 +109,12 @@ func Test_moveZeroes(t *testing.T) {
 	nums := []int{1, 2, 0, 3, 2, 0, 1}
 	moveZeroes(nums)
 	fmt.Println(nums)
-	
+
 }
 
+func Test_fib(t *testing.T) {
+	n := 10
+	fmt.Println(fib(n))
+	fmt.Println(fib2(n))
+	fmt.Println(fib3(n))
+}

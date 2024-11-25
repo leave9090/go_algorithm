@@ -261,3 +261,40 @@ func moveZeroes(nums []int) {
 		right++
 	}
 }
+
+// 斐波那契数列
+func fib(n int) int {
+	if n < 2 {
+		return n
+	}
+	return fib(n-1) + fib(n-2)
+}
+
+func fib2(n int) int {
+	if n < 2 {
+		return n
+	}
+	a, b, c := 0, 1, 0
+	for i := 2; i <= n; i++ {
+		c = a + b
+		a = b
+		b = c
+	}
+	return c
+}
+
+func fib3(n int) int {
+	num := make(map[int]int)
+
+	return helper(n, num)
+}
+func helper(n int, num map[int]int) int {
+	if n < 2 {
+		return n
+	}
+	if v, ok := num[n]; ok {
+		return v
+	}
+	num[n] = helper(n-1, num) + helper(n-2, num)
+	return num[n]
+}
