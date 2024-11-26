@@ -298,3 +298,22 @@ func helper(n int, num map[int]int) int {
 	num[n] = helper(n-1, num) + helper(n-2, num)
 	return num[n]
 }
+
+// 不同路径
+func uniquePaths(m int, n int) int {
+	l := make([][]int, m)
+
+	for i := range l {
+		l[i] = make([]int, n)
+		l[i][0] = 1
+	}
+	for i := 0; i < n; i++ {
+		l[0][i] = 1
+	}
+	for i := 1; i < m; i++ {
+		for j := 1; j < n; j++ {
+			l[i][j] = l[i-1][j] + l[i][j-1]
+		}
+	}
+	return l[m-1][n-1]
+}

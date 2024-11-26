@@ -118,3 +118,8 @@ func Test_fib(t *testing.T) {
 	fmt.Println(fib2(n))
 	fmt.Println(fib3(n))
 }
+
+func Test_uniquePaths(t *testing.T) {
+
+	fmt.Println(uniquePaths(3, 3))
+}
